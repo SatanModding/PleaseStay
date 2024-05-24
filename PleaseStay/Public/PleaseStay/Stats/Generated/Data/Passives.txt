@@ -1,0 +1,24 @@
+new entry "STAY_STILL_PASSIVE"
+type "PassiveData"
+data "DisplayName" "h03652d052f114f8ebbc10bc2602cddc835e7"
+data "Description" "h31d5cb6c31ed4d198231d44624caf7c59f5b"
+data "Icon" "Spell_Transmutation_FleshToStone"
+data "Properties" "IsToggled;ToggledDefaultAddToHotbar"
+data "ToggleOnFunctors" "ApplyStatus(STAY_STILL_STATUS,100,-1)"
+data "ToggleOffFunctors" "RemoveStatus(STAY_STILL_STATUS)"
+
+
+
+
+new entry "PLEASESTAY_PLAY_ANIMATIONS_PASSIVE"
+type "PassiveData"
+data "DisplayName" "hf915ccb7c6ab460089bf6e132b6b9172ggd6"
+data "Description" "hd56d3f4d08e140afa6ce277a0e74b1727542"
+data "Icon" "Spell_OttosIrresistibleDance"
+data "Properties" "IsToggled;ToggledDefaultAddToHotbar"
+data "ToggleOnFunctors" "ApplyStatus(PLEASESTAY_PLAY_ANIMATIONS_STATUS,100,-1)"
+data "ToggleOffFunctors" "RemoveStatus(PLEASESTAY_PLAY_ANIMATIONS_STATUS)"
+
+
+
+

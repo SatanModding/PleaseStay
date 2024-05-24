@@ -1,0 +1,16 @@
+
+
+new entry "PLEASESTAY_START_MOVING_ALL"
+type "SpellData"
+data "SpellType" "Shout"
+data "Icon" "Spell_Evocation_OtilukesResilientSphere"
+data "DisplayName" "hd9f2b907gf748g4ce6g9a41gd200bd9d34ff"
+data "Description" "hcbb40652g8090g44c8gbc6bgf49df29f2d3c"
+data "TargetConditions" ""
+data "CastSound" "Spell_Cast_Utility_DimensionDoor_L4to5"
+data "Autocast" "Yes"
+data "HitAnimationType" "None"
+data "SpellAnimationIntentType" "None"
+data "SpellFlags" "ImmediateCast"
+
+

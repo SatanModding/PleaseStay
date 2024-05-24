@@ -1,0 +1,23 @@
+
+new entry "STAY_STILL_STATUS"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h38fc0213b20a4412bf0f223aeda5a7e974a9"
+data "Description" "hd5dfdb8b7aa34a808f628362b0f04fa8884a"
+data "Icon" "Spell_Transmutation_FleshToStone"
+data "StackId" "STAY_STILL_STATUS"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
+
+
+
+new entry "PLEASESTAY_PLAY_ANIMATIONS_STATUS"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h301d45d59433416298cdb7e131595f0e00ea"
+data "Description" "h7f1e1f279d594213bdc4a6fe1d936039f1db"
+data "Icon" "Spell_OttosIrresistibleDance"
+data "StackId" "PLEASESTAY_PLAY_ANIMATIONS_STATUS"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
+
+
+
