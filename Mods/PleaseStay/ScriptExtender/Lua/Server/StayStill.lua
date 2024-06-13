@@ -49,7 +49,7 @@ end
 function untoggleStayStillEveryone()
     for _, uuid in pairs(GetEveryoneThatIsRelevant())do
         if HasStayStillStatus(uuid) then
-            Osi.TogglePassive(character, "PLEASESTAY_STAY_STILL_PASSIVE") 
+            Osi.TogglePassive(uuid, "PLEASESTAY_STAY_STILL_PASSIVE") 
         end
     end
 end

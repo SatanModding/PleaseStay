@@ -24,8 +24,11 @@
 -- Adds the "Stay in Camp" toggle to each partymember
 Ext.Osiris.RegisterListener("LevelGameplayStarted", 2, "after", function(_, _)
 
+    _P("[PLEASE STAY] Level Gameplay Started. Beginning Adding of Spells and Passives")
+
     local party = Osi.DB_PartyMembers:Get(nil)
     for i = #party, 1, -1 do
+        _P("[PLEASE STAY] Adding spells and passives for", party[i][1])
         Osi.AddPassive(party[i][1],"PLEASESTAY_STAY_STILL_PASSIVE")
         Osi.AddPassive(party[i][1],"PLEASESTAY_PLAY_ANIMATIONS_PASSIVE")
         Osi.AddSpell(party[i][1], "PLEASESTAY_CLEAR_ALL_PLEASESTAY_STATUSES")
@@ -35,6 +38,7 @@ end)
 
 -- Adds the "Stay in Camp" toggle to a partymember added during gameplay
 Ext.Osiris.RegisterListener("CharacterJoinedParty", 1, "after", function(character)
+    _P("[PLEASE STAY] Character joined party. Beginning Adding of Spells and Passives for ", character)
     Osi.AddPassive(character,"PLEASESTAY_STAY_STILL_PASSIVE")
     Osi.AddPassive(character,"PLEASESTAY_PLAY_ANIMATIONS_PASSIVE")
     Osi.AddSpell(character, "PLEASESTAY_CLEAR_ALL_PLEASESTAY_STATUSES")
