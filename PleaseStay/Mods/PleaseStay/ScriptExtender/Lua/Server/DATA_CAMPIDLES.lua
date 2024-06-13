@@ -11,12 +11,28 @@
 --------------------------------------------------------------
 
 
+-- TODO - change these according to Alitheas tests 
+-- Might need race specific checks
+
 -- List of all camp idles for all companions with their IDs
 
 ANIMATIONS = {
+    --Generic
+    ["any"] = {
+        "CUST_Bored_02_7892cb3b-2935-4aa3-b65c-64d9664cbe75",
+        "CUST_Dejected_01_Loop_487b6cb3-1ca3-4041-acba-bcac93cfcbe5",
+        "CUST_LookingAround_63bcacef-5631-4ab3-9400-81b23cb18ca7",
+        "CUST_Meditating_01_45b1a54b-b127-46d2-bfe6-daa8963398ea",
+        "CUST_Pondering_01_Loop_a47454a1-05a2-4153-bdfe-7a0500fa62d0",
+        "CUST_Praying_01_Loop_b45ab827-aebd-49ed-9ac7-07a1489a5490",
+        "CUST_Reading_Book_01_c3af4377-7383-4aeb-a067-d8c36e82f716",
+        "CUST_Reading_Book_01_Loop_d8db9dc7-c6dd-4b6f-8af0-620c7473d8f8",
+        "CUST_Thinking_01_97588786-d9bf-4d18-879b-1bd3dcaa62ba",
+        "CUST_WarmingByFire_01_Loop_e2d0b8f4-00ae-49a4-a878-a9841fd78a96"
+    },
+
     -- Gale
     ["ad9af97d-75da-406a-ae13-7071c563f604"] = {
-        "CUST_Reading_Book_01_c3af4377-7383-4aeb-a067-d8c36e82f716",
         "CUST_Thinking_01_97588786-d9bf-4d18-879b-1bd3dcaa62ba",
         "CUST_EPI_Gale_Chatting_01_Loop_c49d9988-44f0-47ec-8afb-7c08857f7852",
         "CUST_EPI_Gale_Drinking_01_Loop_ac8eb7ae-4e86-4f82-8586-ea152572f8c6",
@@ -36,9 +52,6 @@ ANIMATIONS = {
     },
     -- Wyll
     ["c774d764-4a17-48dc-b470-32ace9ce447d"] = {
-        "CUST_Bored_02_7892cb3b-2935-4aa3-b65c-64d9664cbe75",
-        "CUST_Reading_Book_01_Loop_d8db9dc7-c6dd-4b6f-8af0-620c7473d8f8",
-        "CUST_Pondering_01_Loop_a47454a1-05a2-4153-bdfe-7a0500fa62d0",
         "CUST_EPI_AvernusWyll_Dance_01_Loop_9dab7359-b7c6-468f-917d-d2fe76be0829",
         "CUST_EPI_AvernusWyll_SittingOnFloorDrink_01_Loop_40d59dd0-1364-46c2-ba02-e0b4f52bad98",
         "CUST_EPI_DukeWyll_EnjoyingTheMusic_01_Loop_63221d04-2ae3-4d7e-a626-a86c0c717222",
@@ -48,16 +61,10 @@ ANIMATIONS = {
     },
     -- Shart
     ["3ed74f06-3c60-42dc-83f6-f034cb47c679"] = {
-        "CUST_Dejected_01_Loop_487b6cb3-1ca3-4041-acba-bcac93cfcbe5",
-        "CUST_Reading_Book_01_c3af4377-7383-4aeb-a067-d8c36e82f716",
-        "CUST_Praying_01_Loop_b45ab827-aebd-49ed-9ac7-07a1489a5490",
         "CUST_EPI_Shadowheart_Dance_01_Loop_2a82690c-f334-4f0d-964f-0161f9efd9e6",
         "CUST_EPI_Shadowheart_Stargazing_01_Loop_3d2ad8b1-f894-4ecb-ac07-de2c482e537a",
         "CUST_EPI_Shadowheart_TestingWaters_01_Loop_eacaabfe-307d-492b-8826-6581bb841bff",
         "CUST_EPI_Shadowheart_LookingAtFlower_01_Loop_a481a91e-d3f1-4247-bbbd-6c33d39eff15",
-        "CUST_WarmingByFire_01_Loop_e2d0b8f4-00ae-49a4-a878-a9841fd78a96",
-        "CUST_Pondering_01_Loop_a47454a1-05a2-4153-bdfe-7a0500fa62d0",
-        "CUST_Dejected_01_Loop_487b6cb3-1ca3-4041-acba-bcac93cfcbe5",
         "CUST_EPI_Shadowheart_Eating_01_b8eeb9da-8c8c-4727-8af9-46852860f988",
         "CUST_EPI_Shadowheart_WoundFlaring_01_1e154f3b-825a-4a19-8200-e777bb87388f"
     },
@@ -75,11 +82,9 @@ ANIMATIONS = {
         "CUST_EPI_Halsin_WarmHandsBonfire_01_2e97dfe0-2224-4469-9c62-754690688a9a",
         "CUST_EPI_Halsin_Dance_01_Loop_e0bbddb0-4e03-4f74-8fd4-dc172026de66",
         "CUST_EPI_Halsin_UncomfortableClothes_01_89e3c1ba-85e8-4a1e-ae95-9b8a1ffa140c",
-        "CUST_TellStory_01_Loop_cc763951-1ae0-4b04-9c27-0261d8eef3fd"
     },
-    -- "S_Player_Astarion_c7c13742-bacd-460a-8f65-f864fe41f255"
+    -- Astarion
     ["c7c13742-bacd-460a-8f65-f864fe41f255"] = {
-        "CUST_Reading_Book_01_c3af4377-7383-4aeb-a067-d8c36e82f716",
         "CUST_EPI_CazAstarion_Pacing_01_3c5d3520-c03c-409c-8163-0a813c7476cb",
         "CUST_EPI_CazAstarion_SharpensDagger_01_8642de6d-1377-4ba8-a32d-e90c236b5ef5",
         "CUST_EPI_CazAstarion_DaggerThrow_01_13475c87-29df-4e84-87e7-e5c115e81b92",
@@ -91,21 +96,17 @@ ANIMATIONS = {
     },
     --Minthara
     ["25721313-0c15-4935-8176-9f134385451b"] = {
-        "CUST_Reading_Book_01_c3af4377-7383-4aeb-a067-d8c36e82f716",
         "CUST_Minthara_AdjustingOutfit_01_19bbe55d-e338-4fe3-8900-e17977949ff7",
         "CUST_Minthara_BotheredbySun_01_4f4b0dba-d426-4a05-a7af-0ef614dfd091",
-        "CUST_Meditating_01_45b1a54b-b127-46d2-bfe6-daa8963398ea",
-        "CUST_EPI_Minthara_EnjoyingParty_01_f2e2145e-39b6-4038-aa77-9157f69a9204",
+        -- "CUST_EPI_Minthara_EnjoyingParty_01_f2e2145e-39b6-4038-aa77-9157f69a9204", looks weird without table
         "CUST_EPI_Minthara_Eating_01_ffcf5fd1-862b-4765-8645-3cbc0f96432c",
         "CUST_EPI_Minthara_Drinking_01_09f84725-67ec-4680-b415-b0c2b176ac55",
         "CUST_EPI_Minthara_Bored_01_8fdbac5c-f4a9-4d25-b7ea-bbbae6147753",
         "CUST_EPI_Minthara_LookAround_01_e957120e-e00d-4a47-8c7b-f58e12f83f7f",
-        "CUST_EPI_Minthara_Relaxed_01_b49ea08e-1fa9-48f1-9799-d3c0f66afb0c"
+        -- "CUST_EPI_Minthara_Relaxed_01_b49ea08e-1fa9-48f1-9799-d3c0f66afb0c" looks boring
     },
     --Laezel
     ["58a69333-40bf-8358-1d17-fff240d7fb12"] = {
-        "CUST_Meditating_01_45b1a54b-b127-46d2-bfe6-daa8963398ea",
-        "CUST_LookingAround_63bcacef-5631-4ab3-9400-81b23cb18ca7",
         "CUST_EPI_Laezel_ListeningToMusic_01_5c426fd3-76ec-4165-ab9b-f2582c046743",
         "CUST_EPI_Laezel_DrinkingWine_01_bc14695d-b614-475c-9dcb-a54684e825b6",
         "CUST_EPI_Laezel_LookingUp_01_b571f848-91d4-4777-b551-0e60e1973f61",
