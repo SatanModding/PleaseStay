@@ -1,11 +1,11 @@
-new entry "STAY_STILL_PASSIVE"
+new entry "PLEASESTAY_STAY_STILL_PASSIVE"
 type "PassiveData"
 data "DisplayName" "h03652d052f114f8ebbc10bc2602cddc835e7"
 data "Description" "h31d5cb6c31ed4d198231d44624caf7c59f5b"
 data "Icon" "Spell_Transmutation_FleshToStone"
 data "Properties" "IsToggled;ToggledDefaultAddToHotbar"
-data "ToggleOnFunctors" "ApplyStatus(STAY_STILL_STATUS,100,-1)"
-data "ToggleOffFunctors" "RemoveStatus(STAY_STILL_STATUS)"
+data "ToggleOnFunctors" "ApplyStatus(PLEASESTAY_STAY_STILL_STATUS,100,-1)"
+data "ToggleOffFunctors" "RemoveStatus(PLEASESTAY_STAY_STILL_STATUS)"
 
 
 

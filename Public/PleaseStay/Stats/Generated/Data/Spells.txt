@@ -1,6 +1,6 @@
 
 
-new entry "PLEASESTAY_START_MOVING_ALL"
+new entry "PLEASESTAY_CLEAR_ALL_PLEASESTAY_STATUSES"
 type "SpellData"
 data "SpellType" "Shout"
 data "Icon" "Spell_Evocation_OtilukesResilientSphere"

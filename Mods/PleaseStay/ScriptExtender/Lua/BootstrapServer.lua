@@ -1,3 +1,14 @@
+------------------------------------------------------------------------------------------------------------------------------
+--
+--
+--          Authors Note: If anyone is looking at this mod for trying to learn from it please note the following:
+--
+--          During the development of this mod we did not yet have access to the Ext.Timer functions from SE. 
+--          For this reason Osi Timers have been used. These are not recommened but have been kept here.
+--          Please use Ext Timers if necessary
+--
+---------------------------------------------------------------------------------------------------------------------------
+
 Ext.Require("Server/PleaseStay.lua")
 
 Ext.Require("Server/DATA_CAMPIDLES.lua")
@@ -11,9 +22,6 @@ Ext.Require("Server/CampIdles.lua")
 
 
 PersistentVars = {}
-
-
-_P("HOTLOADING WORKED")
 
 
 

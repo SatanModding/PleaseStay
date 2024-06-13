@@ -1,11 +1,11 @@
 
-new entry "STAY_STILL_STATUS"
+new entry "PLEASESTAY_STAY_STILL_STATUS"
 type "StatusData"
 data "StatusType" "BOOST"
 data "DisplayName" "h38fc0213b20a4412bf0f223aeda5a7e974a9"
 data "Description" "hd5dfdb8b7aa34a808f628362b0f04fa8884a"
 data "Icon" "Spell_Transmutation_FleshToStone"
-data "StackId" "STAY_STILL_STATUS"
+data "StackId" "PLEASESTAY_STAY_STILL_STATUS"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
 
 

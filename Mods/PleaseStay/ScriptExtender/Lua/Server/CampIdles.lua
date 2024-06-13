@@ -10,34 +10,8 @@
 
 
 
--- VARIABLES
 --------------------------------------------------------------
 
--- whether playing an animation is still allowed
--- key: uuid
--- value: bool
-
-function getAnimationsAllowed()
-    return PersistentVars['animationsAllowed']
-end
-
-
--- GETTERS AND SETTERS
---------------------------------------------------------------
-
--- Function to set whether animations are allowed for a specific UUID
---@param uuid string 
---@param bool bool
-function setAnimationsAllowed(uuid, bool)
-    PersistentVars['animationsAllowed'][uuid] = bool
-end
-
--- Function to get whether animations are allowed for a specific UUID
---@param uuid string 
---@param      bool
-function getAnimationsAllowed(uuid)
-    return PersistentVars['animationsAllowed'][uuid]
-end
 
 --------------------------------------------------------------
 --
@@ -45,93 +19,99 @@ end
 --
 --------------------------------------------------------------
 
+-- Helpers
+--------------------------------------------------------------
+
+-- Returns whether a character has the "Play Animations" status active
+--@param  uuid string
+--@return bool
+function HasIdleStatus(uuid)
+    if Osi.HasActiveStatus(uuid, "PLEASESTAY_PLAY_ANIMATIONS_STATUS") == 1 then
+        return true 
+    else
+        return false
+    end
+end
+
+
+-- Returns the allowed animations for a character (based on whether they are an Origin, bodytype [and maybe race - waiting for test results])
+local function getAllowedAnimations(character)
+    -- General works for everyone. Origins get their special ones + general
+    -- Everyone else gets General
+
+    local allowedAnimations
+    local generics = ANIMATIONS["any"]
+
+    for uuid, animationList in pairs(ANIMATIONS) do
+        if uuid == character then
+            allowedAnimations = Concat(generics, animationList)
+        end
+    end
+
+    -- Tavs etc
+    if allowedAnimations == nil then
+        allowedAnimations = generics
+    end
+
+    return allowedAnimations
+
+end
 
 -- Toggling
 --------------------------------------------------------------
 
--- untoggles the Stay Still passive
---@param character string
-function untoggleAnimation(character)
-    Osi.TogglePassive(character, "PLEASESTAY_PLAY_ANIMATIONS_PASSIVE")
-    setAnimationsAllowed(character, false) 
-end
-
 
 -- untoggles the Stay Still passive for every entity that has it toggled on
 function untoggleAnimationEveryone()
-    for uuid, bool in pairs(PersistentVars['animationsAllowed'])do
-        if bool then
-            untoggleAnimation(uuid)
+    for _, uuid in pairs(GetEveryoneThatIsRelevant())do
+        if HasIdleStatus(uuid) then
+            Osi.TogglePassive(uuid, "PLEASESTAY_PLAY_ANIMATIONS_PASSIVE")
         end
     end
 end
 
 
-
 -- Playing Animations
 --------------------------------------------------------------
-
--- stops playing idle animations for a character
---@param character string
-function stopPlayingIdleAnims(character)
-    PersistentVars['animationsAllowed'][character] = false
-end
-
-
 
 -- plays idle animations for a character every few seconds
 --@param character string
 function startPlayingIdleAnims(character)
-    if ANIMATIONS[character] and PersistentVars['animationsAllowed'][character] and PersistentVars['stayStillApplied'][character] then
-            if not (character == Osi.GetHostCharacter()) then
-                local i = math.random(#ANIMATIONS[character])
-                local animation =  ANIMATIONS[character][i]
-                pcall(Osi.PlayAnimation, character,  animation)
-            end
-        Osi.ObjectTimerLaunch(character, "StartedPlayinAnimation",40000)
-    end
-end
 
+    if HasIdleStatus(character) and (not (character == Osi.GetHostCharacter())) then
+        animations = getAllowedAnimations(character)
+        local i = math.random(#animations)
+        local animation =  animations[i]
+        pcall(Osi.PlayAnimation, character,  animation)
+
+    end
+      -- Call same function again after 40 min (makes sure all anims finish)
+      Osi.ObjectTimerLaunch(character, "StartedPlayingAnimation",40000)
+end
 
 
 -- Initializing
 -----------------------------------------------------------------
 
-
--- Initializes PersVars
-local function onSessionLoaded()
-    if not PersistentVars['animationsAllowed'] then
-        PersistentVars['animationsAllowed'] = {}
-    end
-
-end
-
-
 local function onLevelGameplayStarted()
     -- resume idle animations 
-
-    local party = Osi.DB_PartyMembers:Get(nil)
-    for i = #party, 1, -1 do
-        startPlayingIdleAnims(CleanPrefix(party[i][1]))
+    for _, uuid in pairs(GetEveryoneThatIsRelevant()) do
+        startPlayingIdleAnims(CleanPrefix(uuid))
     end
 end
-
 
 
 -- LISTENERS
 --------------------------------------------------------------
 
 Ext.Osiris.RegisterListener("ObjectTimerFinished", 2, "after", function(character, timer)
-    if (timer == "StartedPlayinAnimation") then
-        startPlayingIdleAnims(CleanPrefix(character))
+    if (timer == "StartedPlayingAnimation") then
+        -- additional check to not have this looping
+        if HasIdleStatus(character) then
+            startPlayingIdleAnims(CleanPrefix(character))
+        end
     end
 end)
-
-
-
-
--- Initializes PersVars
-Ext.Events.SessionLoaded:Subscribe(onSessionLoaded)
 
 
 -- Initialize
