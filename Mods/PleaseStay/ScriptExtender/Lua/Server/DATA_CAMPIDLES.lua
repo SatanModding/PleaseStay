@@ -24,12 +24,23 @@ ANIMATIONS = {
         "CUST_LookingAround_63bcacef-5631-4ab3-9400-81b23cb18ca7",
         "CUST_Meditating_01_45b1a54b-b127-46d2-bfe6-daa8963398ea",
         "CUST_Pondering_01_Loop_a47454a1-05a2-4153-bdfe-7a0500fa62d0",
-        "CUST_Praying_01_Loop_b45ab827-aebd-49ed-9ac7-07a1489a5490",
         "CUST_Reading_Book_01_c3af4377-7383-4aeb-a067-d8c36e82f716",
         "CUST_Reading_Book_01_Loop_d8db9dc7-c6dd-4b6f-8af0-620c7473d8f8",
-        "CUST_Thinking_01_97588786-d9bf-4d18-879b-1bd3dcaa62ba",
         "CUST_WarmingByFire_01_Loop_e2d0b8f4-00ae-49a4-a878-a9841fd78a96"
     },
+
+    -- Humanoid & Tiefling & Gith & Halfling bt1 (lean femm) + all gnomes + orc bt2
+
+    ["pray"] = {
+        "CUST_Praying_01_Loop_b45ab827-aebd-49ed-9ac7-07a1489a5490"
+    },
+
+
+    -- Everyone except halfling & gnome bt1 (femme)
+    ["think"] = {
+        "CUST_Thinking_01_97588786-d9bf-4d18-879b-1bd3dcaa62ba"
+    },
+    
 
     -- Gale
     ["ad9af97d-75da-406a-ae13-7071c563f604"] = {

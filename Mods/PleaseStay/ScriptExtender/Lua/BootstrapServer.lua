@@ -9,6 +9,7 @@
 --
 ---------------------------------------------------------------------------------------------------------------------------
 
+Ext.Require("Server/BODIES.lua")
 Ext.Require("Server/PleaseStay.lua")
 
 Ext.Require("Server/DATA_CAMPIDLES.lua")
@@ -31,7 +32,7 @@ PersistentVars = {}
 
 -- List of all camp idles for all companions with their IDs
 
-ANIMATIONS = {
+ANIMATIONS_TESTING = {
     --Generic
     ["any"] = {
         "CUST_Bored_02_7892cb3b-2935-4aa3-b65c-64d9664cbe75",
@@ -152,7 +153,7 @@ local function generic()
     delay = 40000 
     
     _P("Starting Generic animations")
-    for key, values in pairs(ANIMATIONS) do 
+    for key, values in pairs(ANIMATIONS_TESTING) do 
         -- all anims with a 40 sec delay
         if key == "any" then
             for _, anim in pairs(values) do
@@ -178,7 +179,7 @@ local function companions_fast()
     delay = 5000
     
     _P("Starting Companions fast animations")
-    for key, values in pairs(ANIMATIONS) do 
+    for key, values in pairs(ANIMATIONS_TESTING) do 
         -- all anims with a 40 sec delay
         if not (key == "any") then
             for _, anim in pairs(values) do
@@ -203,7 +204,7 @@ local function companions_full()
     delay = 40000 
     
     _P("Starting Companions full animations")
-    for key, values in pairs(ANIMATIONS) do 
+    for key, values in pairs(ANIMATIONS_TESTING) do 
         -- all anims with a 40 sec delay
         if not (key == "any") then
             for _, anim in pairs(values) do
