@@ -205,7 +205,7 @@ function startPlayingIdleAnims(character)
         animations = getAllowedAnimations(character)
         local i = math.random(#animations)
         local animation =  animations[i]
-        _P("Playing animation ",  character, " ", animation)
+        --_P("Playing animation ",  character, " ", animation)
         pcall(Osi.PlayAnimation, character,  animation)
 
     end

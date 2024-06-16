@@ -21,7 +21,7 @@
 
     <!-- Toggle for entity to play animations -->
 
-    <content contentuid="hf915ccb7c6ab460089bf6e132b6b9172ggd6" version="1">Play Idle animations</content>
+    <content contentuid="hf915ccb7c6ab460089bf6e132b6b9172ggd6" version="1">Play idle animations</content>
     <content contentuid="hd56d3f4d08e140afa6ce277a0e74b1727542" version="1">When this is active, the entity will play random idle animations.</content>
 
     <!-- Passive Applied to entity when it is allowed to play animations -->

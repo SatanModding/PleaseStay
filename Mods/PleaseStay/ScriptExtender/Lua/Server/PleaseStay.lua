@@ -139,7 +139,6 @@ end)
 -- Reapply the "Stay Still" Passiv after the dialog has started
 Ext.Osiris.RegisterListener("ObjectTimerFinished", 2, "after", function(uuid, timer)
     if (timer == "PleaseStay_UntoggledStayStillStatusForDialogue") then
-        _P(uuid, " Stay still")
         Osi.TogglePassive(uuid, "PLEASESTAY_STAY_STILL_PASSIVE") 
     end
 end)
@@ -147,7 +146,6 @@ end)
 -- Reapply the "Stay Still" Passiv after the dialog has started
 Ext.Osiris.RegisterListener("ObjectTimerFinished", 2, "after", function(uuid, timer)
     if (timer == "PleaseStay_UntoggledAnimationStatusForDialogue") then
-        _P(uuid, " animations")
         Osi.TogglePassive(uuid, "PLEASESTAY_PLAY_ANIMATIONS_PASSIVE") 
     end
 end)
